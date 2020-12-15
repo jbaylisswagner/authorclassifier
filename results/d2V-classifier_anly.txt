@@ -1,0 +1,50 @@
+
+*****Analysis of Doc2Vec NYT Top 10*****
+
+This is the top 9 male output
+ - Entry at index 22: The classifier guessed Male. The author is M
+ - Entry at index 573: The classifier guessed Male. The author is M
+ - Entry at index 392: The classifier guessed Male. The author is F
+ - Entry at index 941: The classifier guessed Male. The author is M
+ - Entry at index 60: The classifier guessed Male. The author is M
+ - Entry at index 677: The classifier guessed Male. The author is M
+ - Entry at index 107: The classifier guessed Male. The author is F
+ - Entry at index 720: The classifier guessed Male. The author is M
+ - Entry at index 604: The classifier guessed Male. The author is M
+
+This is the top 9 female output
+ - Entry at index 22: The classifier guessed Male. The author is M
+ - Entry at index 867: The classifier guessed Male. The author is M
+ - Entry at index 1279: The classifier guessed Male. The author is F
+ - Entry at index 713: The classifier guessed Male. The author is M
+ - Entry at index 1362: The classifier guessed Male. The author is F
+ - Entry at index 1283: The classifier guessed Male. The author is F
+ - Entry at index 1281: The classifier guessed Male. The author is F
+ - Entry at index 1259: The classifier guessed Male. The author is F
+ - Entry at index 1313: The classifier guessed Male. The author is F
+========================================
+
+*****Analysis of Doc2Vec Blog Top 10*****
+
+This is the top 9 male output
+ - Entry at index 3089: The classifier guessed Female. The author is F
+ - Entry at index 1856: The classifier guessed Female. The author is F
+ - Entry at index 834: The classifier guessed Female. The author is M
+ - Entry at index 841: The classifier guessed Female. The author is M
+ - Entry at index 1693: The classifier guessed Female. The author is M
+ - Entry at index 2487: The classifier guessed Female. The author is M
+ - Entry at index 2004: The classifier guessed Female. The author is F
+ - Entry at index 2017: The classifier guessed Female. The author is F
+ - Entry at index 1580: The classifier guessed Female. The author is F
+
+This is the top 9 female output
+ - Entry at index 2107: The classifier guessed Female. The author is M
+ - Entry at index 1856: The classifier guessed Female. The author is F
+ - Entry at index 1693: The classifier guessed Female. The author is M
+ - Entry at index 2004: The classifier guessed Female. The author is F
+ - Entry at index 2087: The classifier guessed Female. The author is F
+ - Entry at index 2694: The classifier guessed Female. The author is M
+ - Entry at index 2567: The classifier guessed Female. The author is M
+ - Entry at index 2615: The classifier guessed Female. The author is M
+ - Entry at index 1967: The classifier guessed Female. The author is M
+========================================

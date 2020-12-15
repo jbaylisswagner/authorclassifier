@@ -1,0 +1,28 @@
+
+*****Men NYT Data*****
+Train is 668 (0.80)%
+Dev is 83 (0.0993)%
+Test is 85 (0.1017)%
+
+Total: 836; Train: 668 + Dev: 83 + Test: 85 = 836 
+
+*****Women NYT Data*****
+Train is 668 (0.80)%
+Dev is 83 (0.0993)%
+Test is 85 (0.1017)%
+
+Total: 836; Train: 668 + Dev: 83 + Test: 85 = 836 
+
+*****Men blogs Data*****
+Train is 1237 (0.80)%
+Dev is 154 (0.0995)%
+Test is 156 (0.1008)%
+
+Total: 1547; Train: 1237 + Dev: 154 + Test: 156 = 1547 
+
+*****Women blogs Data*****
+Train is 1237 (0.80)%
+Dev is 154 (0.0995)%
+Test is 156 (0.1008)%
+
+Total: 1547; Train: 1237 + Dev: 154 + Test: 156 = 1547 

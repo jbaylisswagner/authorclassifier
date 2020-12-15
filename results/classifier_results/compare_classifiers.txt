@@ -1,0 +1,9 @@
+Blog Data:
+* Stupid: Our gender filter performs with 0.500000 accuracy on the test set.
+* Nb: Our gender filter performs with 0.769481 accuracy on the test set.
+* Bayes: Our gender filter performs with 0.636364 accuracy on the test set.
+
+NYT Data:
+* Stupid: Our gender filter performs with 0.500000 accuracy on the test set.
+* Nb: Our gender filter performs with 0.753012 accuracy on the test set.
+* Bayes: Our gender filter performs with 0.469880 accuracy on the test set.

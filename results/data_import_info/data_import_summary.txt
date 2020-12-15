@@ -1,0 +1,23 @@
+Sucesfully read in 1547 M and 1547 W blog entries
+
+*****Blog Summary*****
+Total Blog Entries: 3227
+Total M: 1679
+Total F: 1548
+
+*****Imported Blog Dataset Summary*****
+Total Entries: 3094
+Total M: 1547
+Total F: 1547
+Sucesfully read in 836 M and 836 W NYT articles
+
+*****NYT Summary*****
+Total Blog Entries: 5230
+Total M: 3854
+Total F: 836
+Total Other 540
+
+*****Imported NYT Dataset Summary*****
+Total Entries: 1672
+Total M: 836
+Total F: 836

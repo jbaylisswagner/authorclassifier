@@ -1,0 +1,5 @@
+
+*****Sentiments Summary*****
+Total number words: 6787
+Number of pos words: 2005 (29.54%)
+Number of neg words: 4782 (70.46%)
