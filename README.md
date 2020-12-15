@@ -4,6 +4,11 @@ This was a group final project for our CS65 Natural Language Processing course. 
 
 We presented on our project and documented our results in a paper conforming to Association of Computational Linguistics conference standards; you can see our paper & slides in the 'paper' directory.
 
+My partners on this project were the lovely: 
+- Jake Chanenson ([@JakeC007](https://github.com/JakeC007) on GitHub)
+- Adriana Knight 
+- Naomi Park
+
 ## What is in our repository
 * code
     - `infuse_data.py` - contains methods to read in and clean the datasets.
