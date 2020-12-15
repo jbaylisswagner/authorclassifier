@@ -1,5 +1,6 @@
-# final-RWRIPSHRG
+# authorclassifier
 
+This was a group final project for our CS65 Natural Language Processing course. We built a naive Bayes baseline and Bayesian classifier in order to see if we could train the latter to identify author gender. We used two different data sets: a set of NYT Opinions articles, and a set of miscellaneous blog posts. Each had an equal number of men and women. In addition, we built a doc2vec system, which created vectors for each document in the corpora and determined which were most likely male- or female-authored.
 
 ## What is in our repository
 * code
@@ -55,4 +56,4 @@
 `$ python3 genderc.py [-h] (-blog | -NYT) [-type TYPE] [--top [TOP]]`
 
 `$ make_model.py [blog/nyt] [t/r]`
-# authorclassifier
+
