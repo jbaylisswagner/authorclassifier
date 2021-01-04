@@ -1,5 +1,5 @@
 """
-This code is adpated from Adriana and Bayliss's Lab5
+This code is adapted from Adriana and Bayliss's Lab5
 It performs naive bayes on gender data
 11/7/2020
 J. Chanenson & B. Wagner
@@ -10,6 +10,26 @@ import math
 from operator import itemgetter
 import argparse
 from nltk import sent_tokenize, word_tokenize, pos_tag
+"""
+import nltk
+>>> nltk.download('punkt')
+[nltk_data] Error loading punkt: <urlopen error [SSL:
+[nltk_data]     CERTIFICATE_VERIFY_FAILED] certificate verify failed:
+[nltk_data]     unable to get local issuer certificate (_ssl.c:1123)>
+False
+>>> import ssl
+>>> try:
+...     _create_unverified_https_context = ssl._create_unverified_context
+... except AttributeError:
+...     # Legacy Python that doesn't verify HTTPS certificates by default
+...     pass
+... else:
+...     # Handle target environment that doesn't support HTTPS verification
+...     ssl._create_default_https_context = _create_unverified_https_context
+...
+>>>
+>>> nltk.download('punkt')
+"""
 import json
 import random
 from datetime import datetime
@@ -48,7 +68,7 @@ class GenderFilter(object):
         self.intersection = self.male_dict.keys() & self.female_dict.keys()
 
 
-    def is_female(self, gender_text, args):
+    def is_female(self, gender_text, args, verbose=False):
         """
         Given a text, calculate the probability of it occuring in either
         category (female or not female) and return if it is more likely that this
@@ -96,7 +116,17 @@ class GenderFilter(object):
             total_prob_male = find_features(gender_text[0], 'M', args)
             total_prob_female = find_features(gender_text[0], 'F', args)
 
-        return total_prob_female >= total_prob_male
+        is_female_bool = total_prob_female >= total_prob_male
+        if verbose:
+            print("Total prob male-authored, normalized: ", total_prob_male/t)
+            print("Total prob female-authored, normalized: ", total_prob_female/t)
+
+            if is_female_bool == True:
+                print("RESULT: We predict this document is female-authored.")
+            else:
+                print("RESULT: We predict this document is male-authored.")
+
+        return is_female_bool
 
     def tune_female(self, gender_text, mw, ww):
         """
@@ -158,7 +188,14 @@ class GenderFilter(object):
 
         #sort list of (word, prob) tuples by probs
         probs.sort(key=itemgetter(1))
-        return [item[0] for item in probs][:n]
+        lst = [item[0] for item in probs][:n]
+        print("\nTop", n, "words with highest probability of appearing in female-authored texts:")
+        print("-"*20)
+        print()
+        for word in lst:
+            print(word)
+        print()
+        return lst
 
     def most_indicative_male(self, n):
         """
@@ -174,7 +211,13 @@ class GenderFilter(object):
 
         #sort list of (word, prob) tuples by probs
         probs.sort(key=itemgetter(1))
-        return [item[0] for item in probs][:n]
+        lst = [item[0] for item in probs][:n]
+        print("\nTop", n, "words with highest probability of appearing in male-authored texts:")
+        print("-"*20)
+        print()
+        for word in lst:
+            print(word)
+        return lst
 
 def test_filter(sf, test_men, test_women, args):
     """
@@ -318,6 +361,12 @@ def anlyPrint(L):
 
     return None
 
+def test_input(filepath):
+    file = open(filepath, 'r', encoding = "utf-8")
+    text = file.read().strip()
+    file.close()
+    return [text, 'M']
+
 def main():
     start_time = datetime.now()
     parser = argparse.ArgumentParser(description='Runs a classifier \
@@ -330,6 +379,9 @@ def main():
     parser.add_argument("-type", action="store", type=str, default="nb",\
                         help="Choose your classifier type. Options: \
                             stupid, nb, and bayes.")
+
+    parser.add_argument("--input", action="store_true",\
+                        help="Use this flag if you want program to predict author gender of a document you provide")
     parser.add_argument("--top", action="store", nargs="?", type=int,\
                         default=5,\
                         help="Set the length of top different items")
@@ -356,10 +408,20 @@ def main():
     # un comments the following code to run the analysis of the data from D2V
     # analysis(g, args)
 
-    #un comment for
-    # print(f"Top {args.top} Women: {g.most_indicative_male(args.top)}")
-    # print(f"Top {args.top} Men: {g.most_indicative_female(args.top)}")
+    input_filepath = "/Users/Alden/Desktop/Kiassat_Navid.txt"
+    if args.input:
+        #input_filepath = input("Enter ROOT filepath of document you want to test: ")
+        print("\nTesting document found at ", input_filepath)
+        print("-"*20)
+        textlst = test_input(input_filepath)
+        is_fem = g.is_female(textlst, args, verbose=True)
+    print("\n")
 
+    if args.top:
+        mwords = g.most_indicative_male(args.top)
+        fwords = g.most_indicative_female(args.top)
+        # print(f"Top {args.top} words with highest probability of appearing in male-authored texts: {g.most_indicative_male(args.top)}\n")
+        # print(f"Top {args.top} words with highest probability of appearing in female-authored texts: {g.most_indicative_female(args.top)}")
 
     print('Duration {}'.format(datetime.now()-start_time))
 
