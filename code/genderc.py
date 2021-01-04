@@ -401,6 +401,7 @@ def main():
     men_dev, women_dev = dev[0], dev[1]
 
     #train classifer
+    print("\n**Training Classifier**")
     g = GenderFilter(men_data, women_data, 1e-5, classifier_type)
     #test the classifier
     test_filter(g, men_test, women_test, args)
